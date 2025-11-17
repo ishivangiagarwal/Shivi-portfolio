@@ -263,47 +263,6 @@ window.addEventListener('load', () => {
 });
 
 // ========================================
-// Cursor Effect (Optional Enhancement)
-// ========================================
-const cursor = document.createElement('div');
-cursor.style.cssText = `
-    width: 20px;
-    height: 20px;
-    border: 2px solid #6366f1;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.2s ease;
-    display: none;
-`;
-document.body.appendChild(cursor);
-
-document.addEventListener('mousemove', (e) => {
-    cursor.style.display = 'block';
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
-
-// Enlarge cursor on interactive elements
-document.querySelectorAll('a, button, .project-card, .cert-card, .achievement-card').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'scale(1.5)';
-        cursor.style.borderColor = '#8b5cf6';
-    });
-    
-    el.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'scale(1)';
-        cursor.style.borderColor = '#6366f1';
-    });
-});
-
-// Hide cursor on mobile
-if (window.innerWidth < 768) {
-    cursor.style.display = 'none';
-}
-
-// ========================================
 // Performance: Lazy Load Images (if added later)
 // ========================================
 if ('IntersectionObserver' in window) {
