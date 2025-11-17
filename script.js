@@ -241,15 +241,9 @@ function showNotification(message, type = 'success') {
 // ========================================
 // Typing effect disabled - keeping static "Data Science Enthusiast" text
 
-// ========================================
-// Project Link Click Handling
-// ========================================
-document.querySelectorAll('.project-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        showNotification('Project details coming soon!', 'success');
-    });
-});
+// Project links now behave natively — no interception here.
+// If you want to show a preview modal for projects without URLs,
+// add a separate handler that checks for the presence of `href` or `data-*` attributes.
 
 // ========================================
 // Add loading animation
